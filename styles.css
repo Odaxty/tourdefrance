@@ -95,7 +95,7 @@ header {
     color: var(--primary-color);
 }
 
-#mon-histoire, #le-parcours, #association, #maladie-crohn, #cagnotte {
+#mon-histoire, #le-parcours, #association, #maladie-crohn, #cagnotte, #contacte {
     text-align: center;
 }
 #le-parcours img, #mon-histoire img {
@@ -195,7 +195,7 @@ footer .top-link {
     color: var(--accent-color);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
     .header-content,
     .story-content {
         flex-direction: column;
