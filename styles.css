@@ -1,0 +1,169 @@
+/* Import Google Font */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary-color: #0077cc;
+    --accent-color: #ffcb05;
+    --bg-light: #ffffff;
+    --text-color: #333;
+}
+
+nav {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+    transition: 0.3s;
+}
+
+header {
+    background-color: var(--bg-light);
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.header-content img {
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.header-text h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.header-text p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.donation-counter {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    background-color: #e0f7fa;
+    padding: 1rem;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.donation-counter span {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+#mon-histoire, #le-parcours, #association, #maladie-crohn, #cagnotte {
+    text-align: center;
+}
+#le-parcours img, #mon-histoire img {
+    width: 30%;
+}
+section {
+    padding: 2rem;
+    background-color: var(--bg-light);
+    margin: 2rem 0;
+    position: relative;
+}
+
+.story-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.story-content img {
+    max-width: 45%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.story-text {
+    max-width: 45%;
+    text-align: left;
+}
+
+.story-text p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.arrow {
+    display: block;
+    font-size: 2rem;
+    text-align: center;
+    color: var(--primary-color);
+    margin-top: 1rem;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.arrow:hover {
+    transform: translateY(5px);
+}
+
+footer {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    text-align: center;
+    border-top-right-radius: 55px;
+    border-top-left-radius: 55px;
+    color: white;
+    font-weight: bold;
+}
+
+footer .top-link {
+    color: white;
+    margin-left: 1rem;
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .header-content,
+    .story-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .story-content img,
+    .story-text {
+        max-width: 90%;
+    }
+
+    nav a {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    .header-content img {
+        width: 60%;
+    }
+}
