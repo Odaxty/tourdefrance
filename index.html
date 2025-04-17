@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tour de France pour les enfants</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <meta property="og:title" content="Tour de France pour les enfants atteints de la maladie de Crohn">
@@ -17,12 +18,20 @@
 <body>
 
     <nav>
-        <a href="#mon-histoire">Mon histoire</a>
-        <a href="#le-parcours">Le parcours</a>
-        <a href="#association">L'association soutenue</a>
-        <a href="#maladie-crohn">La Maladie de Crohn</a>
-        <a href="#cagnotte">La Cagnotte</a>
+        <div class="burger-menu" id="burger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <a href="#mon-histoire">Mon histoire</a>
+            <a href="#le-parcours">Le parcours</a>
+            <a href="#association">L'association soutenue</a>
+            <a href="#maladie-crohn">La Maladie de Crohn</a>
+            <a href="#cagnotte">La Cagnotte</a>
+        </ul>
     </nav>
+    
 
     <header>
         <div class="header-content" data-aos="fade-up">
@@ -30,10 +39,12 @@
             <div class="header-text">
                 <h1 data-aos="fade-up">Un Tour de France pour les enfants atteints de la maladie de Crohn</h1>
                 <p data-aos="fade-up" data-aos-delay="100">Par Théo Chauvière</p>
+                <a href="#cagnotte">
                 <div class="donation-counter" data-aos="fade-up" data-aos-delay="200">
                     <p>Compteur des dons</p>
-                    <span>055€</span>
-                </div>
+                    <span>0000€ / 3432€</span>
+                    <p>Pour 3432 km</p>
+                </div></a>
             </div>
         </div>
         <!-- <a href="#mon-histoire" class="arrow">↓</a>-->
@@ -106,12 +117,23 @@
     <footer>
         <p>By CHAUVIERE Théo • </p>
     </footer>
-
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init({
             duration: 2000,
             once: true
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            const burgerMenu = document.getElementById('burger-menu');
+            const navLinks = document.getElementById('nav-links');
+    
+            burgerMenu.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+
+            });
+            navLinks.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+            });
         });
     </script>
 </body>
