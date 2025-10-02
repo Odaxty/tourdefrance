@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Partir avec Théo</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/gpx.min.js"></script>
+
+</head>
+
+<body>
+
+  <nav>
+    <img src="logo.png" alt="Logo" />
+    <div class="burger-menu" id="burger-menu">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html#nav-link">Accueil</a></li>
+      <li><a href="index.html#le-parcours">Le Parcours</a></li>
+      <li><a href="index.html#contacte">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="bandeau-annonce">
+    <div class="marquee">
+      <div class="marquee-content">
+        🚴 Départ le 11 juillet à 8 h 45 — <a href="depart.html">Plus d'infos sur ma 1ère étape</a>
+      </div>
+      <div class="marquee-content">
+        🚴 Départ le 11 juillet à 8 h 45 — <a href="depart.html">Plus d'infos sur ma 1ère étape</a>
+      </div>
+      <div class="marquee-content">
+        🚴 Départ le 11 juillet à 8 h 45 — <a href="depart.html">Plus d'infos sur ma 1ère étape</a>
+      </div>
+      <div class="marquee-content">
+        🚴 Départ le 11 juillet à 8 h 45 — <a href="depart.html">Plus d'infos sur ma 1ère étape</a>
+      </div>
+      <div class="marquee-content">
+        🚴 Départ le 11 juillet à 8 h 45 — <a href="depart.html">Plus d'infos sur ma 1ère étape</a>
+      </div>
+      <div class="marquee-content">
+        🚴 Départ le 11 juillet à 8 h 45 — <a href="depart.html">Plus d'infos sur ma 1ère étape</a>
+      </div>
+      <div class="marquee-content">
+        🚴 Départ le 11 juillet à 8 h 45 — <a href="depart.html">Plus d'infos sur ma 1ère étape</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section id="partir-avec-moi" data-aos="fade-up"
+      style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+      <h1>M'acompagner sur la 1ère étape !</h1>
+      <p>Tu veux pédaler à mes côtés ? Voici toutes les infos pour te joindre à moi pendant ma 1ère étape </p>
+
+      <h2>Le départ :</h2>
+
+      <p>Rendez-vous à 8 h 45 le <strong>vendredi 11 juillet</strong></p>
+      <p>Où ? Départ de la <strong>place Jacques Chirac</strong></p>
+      <p>Le parcours : 60 km de route puis 30 km de pistes cyclables</p>
+      <p><a href="Theo_TDF.gpx">Lien pour télécharger le gpx</a></li>
+      <p><a href="Départ-théo.pdf">Affiche d'information pour le départ</a></p>
+
+
+
+    </section>
+
+    <section id="le-parcours" data-aos="fade-up">
+      <h2>Ma 1ère étape</h2>
+
+      <div class="etape-navigation" style="margin: 1em 0; text-align: center;">
+        <span id="etape-info" style="margin: 0 1em; font-weight: bold;"></span>
+        <br>
+      </div>
+      <div id="map" style="height: 400px; width: 100%; border-radius: 12px;" data-aos="fade-left"></div>
+    </section>
+    <section id="le-parcours">
+      <h2>Contact rapide</h2>
+      <p>📧 <a href="mailto:theochauv.tourdefrance@gmail.com">theochauv.tourdefrance@gmail.com</a></p>
+      <p>📱 Insta : <a href="https://www.instagram.com/rideforcrohn" target="_blank"
+          rel="noopener noreferrer">@rideforcrohn</a></p>
+      <p>🚴 Strava : <a href="https://www.strava.com/athletes/68468741" target="_blank" rel="noopener noreferrer">Mon
+          profil</a></p>
+    </section>
+
+
+    <script>
+      // 1) Initialiser la carte
+      const map = L.map('map').setView([46.671, -1.426], 10); // Coordonnées de départ à adapter
+
+      // 2) Ajouter le fond de carte OpenStreetMap
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap',
+      }).addTo(map);
+
+      // 3) Charger et afficher le fichier GPX
+      new L.GPX('Theo_TDF.gpx', {
+        async: true,
+        marker_options: {
+          startIconUrl: null,
+          endIconUrl: null,
+          shadowUrl: null
+        },
+        polyline_options: {
+          color: '#007bff',
+          weight: 4,
+          opacity: 0.75,
+          lineCap: 'round'
+        }
+      }).on('loaded', function (e) {
+        map.fitBounds(e.target.getBounds());
+      }).addTo(map);
+    </script>
+
+  </main>
+
+  <footer>
+    <p>By CHAUVIERE Théo • Tour de France solidaire</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 2000,
+      once: true
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const burgerMenu = document.getElementById('burger-menu');
+      const navLinks = document.getElementById('nav-links');
+
+      burgerMenu.addEventListener('click', function () {
+        navLinks.classList.toggle('active');
+      });
+
+      navLinks.addEventListener('click', function () {
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,150 +1,866 @@
 <!DOCTYPE html>
+
 <html lang="fr">
+
+
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Tour de France pour les enfants</title>
+
     <link rel="stylesheet" href="styles.css">
+
     <script src="scripts.js"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
     <meta property="og:title" content="Tour de France pour les enfants atteints de la maladie de Crohn">
-    <meta property="og:description" content="Un défi à vélo de 3432 km pour sensibiliser à la maladie de Crohn chez les enfants.">
-    <meta property="og:image" content="https://odaxty.github.io/tourdefrance/image_ia.png">
-    <meta property="og:url" content="https://odaxty.github.io/tourdefrance/">
+
+    <meta property="og:description"
+
+        content="Un défi à vélo de 3969 km pour sensibiliser à la maladie de Crohn chez les enfants.">
+
+    <meta property="og:image" content="theo.chauviere.eu/moi1.png">
+
+    <meta property="og:url" content="theo.chauviere.eu">
+
+    <meta name="twitter:title" content="Tour de France pour les enfants atteints de la maladie de Crohn">
+
     <meta name="twitter:card" content="summary_large_image">
 
 </head>
+
+
+
 <body>
 
-    <nav>
-        <div class="burger-menu" id="burger-menu">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-        <ul class="nav-links" id="nav-links">
-            <a href="#mon-histoire">Mon histoire</a>
-            <a href="#le-parcours">Le parcours</a>
-            <a href="#association">L'association soutenue</a>
-            <a href="#maladie-crohn">La Maladie de Crohn</a>
-            <a href="#cagnotte">La Cagnotte</a>
-            <a href="#contacte">Contactez-moi</a>
-        </ul>
-    </nav>
-    
 
-    <header>
-        <div class="header-content" data-aos="fade-up">
-            <img src="moi1.png" alt="Cycliste en action" data-aos="zoom-in">
-            <div class="header-text">
-                <h1 data-aos="fade-up">Un Tour de France pour les enfants atteints de la maladie de Crohn</h1>
-                <p data-aos="fade-up" data-aos-delay="100">Par Théo Chauvière</p>
-                <a href="#cagnotte">
-                <div class="donation-counter" data-aos="fade-up" data-aos-delay="200">
-                    <p>Compteur des dons</p>
-                    <span>0000€ / 3432€</span>
-                    <p>Pour 3432 km</p>
-                </div></a>
-            </div>
+
+    <nav>
+
+        <img src="logo.png" alt="">
+
+        <div class="burger-menu" id="burger-menu">
+
+            <div class="bar"></div>
+
+            <div class="bar"></div>
+
+            <div class="bar"></div>
+
         </div>
-        <!-- <a href="#mon-histoire" class="arrow">↓</a>-->
-    </header>
+
+        <ul class="nav-links" id="nav-links">
+
+            <li><a href="#mon-histoire">Mon histoire</a></li>
+
+            <li><a href="#le-parcours">Le parcours</a></li>
+
+            <li><a href="#association">L'association soutenue</a></li>
+
+            <li><a href="#maladie-crohn">La Maladie de Crohn</a></li>
+
+            <li><a href="#soutenir">Me Soutenir</a></li>
+
+            <li><a href="#cagnotte">La Cagnotte</a></li>
+
+            <li><a href="#logement">Recherche Logement</a></li>
+
+            <li><a href="#article">Les Articles</a></li>
+
+            <li><a href="#contacte">Contactez-moi</a></li>
+
+        </ul>
+
+    </nav>
+
+
+
+    <div class="bandeau-annonce">
+
+        <div class="marquee">
+
+            <div class="marquee-content">
+
+                🚴 Arrivée le dimanche 10 août à 12h — <a href="arrivee.html">Plus d'infos sur mon arrivée</a>
+
+            </div>
+
+            <div class="marquee-content">
+
+                🚴 Arrivée le dimanche 10 août à 12h — <a href="arrivee.html">Plus d'infos sur mon arrivée</a>
+
+            </div>
+
+            <div class="marquee-content">
+
+                🚴 Arrivée le dimanche 10 août à 12h — <a href="arrivee.html">Plus d'infos sur mon arrivée</a>
+
+            </div>
+
+            <div class="marquee-content">
+
+                🚴 🚴 Arrivée le dimanche 10 août à 12h — <a href="arrivee.html">Plus d'infos sur mon arrivée</a>
+
+            </div>
+
+            <div class="marquee-content">
+
+                🚴 Arrivée le dimanche 10 août à 12h — <a href="arrivee.html">Plus d'infos sur mon arrivée</a>
+
+            </div>
+
+            <div class="marquee-content">
+
+                🚴 Arrivée le dimanche 10 août à 12h — <a href="arrivee.html">Plus d'infos sur mon arrivée</a>
+
+            </div>
+
+            <div class="marquee-content">
+
+                🚴 Arrivée le dimanche 10 août à 12h — <a href="arrivee.html">Plus d'infos sur mon arrivée</a>
+
+            </div>
+
+        </div>
+
+    </div>
 
     <main>
-        <section id="mon-histoire" data-aos="fade-up">
-            <h2>Mon Histoire</h2>
-            <div class="story-content">
-                <div class="story-text" data-aos="fade-right">
-                    <p>Passionné de vélo et d'informatique</p>
-                    <p>Atteint de la maladie de Crohn à 13 ans</p>
-                    <p>Je suis un battant et un releveur de défis</p>
-                </div>
-                <img src="MOI2.png" alt="Cycliste en action" data-aos="fade-left">
+
+        <section id="intro" data-aos="fade-up">
+
+        <div class="intro-content">
+
+            <img id="cangotte_img" src="moitotal2.jpg" alt="Cycliste en action" data-aos="zoom-in">
+
+
+
+            <div class="intro-text" id="contentintro">
+
+                <h1 data-aos="fade-up">Un Tour de France pour les enfants atteints de la maladie de Crohn</h1>
+
+                <p data-aos="fade-up" data-aos-delay="100">Par Théo Chauvière</p>
+
+                <a href="#cagnotte">
+
+                    <div class="donation-counter" data-aos="fade-up" data-aos-delay="200">
+
+                        <p>Compteur des dons</p>
+
+                        <span>3660€ / 3969€</span>
+
+                        <p>Pour 3969 km</p>
+
+                        <p>1 euro par km parcouru</p>
+
+                    </div>
+
+                </a>
+
             </div>
-            <!-- <a href="#le-parcours" class="arrow">↓</a>-->
+
+        </div>
+
+    </section>
+
+        <section id="article" data-aos="fade-up">
+
+            <h2>Les Articles sur le projet</h2>
+
+            
+			
+			
+			<div class="article-content">
+
+
+                <img src="arrivée_ouest_france.jpg" alt="photo article afa">
+
+                <br><br><br><br><br><br><br>
+                <a href="https://actu.fr/pays-de-la-loire/la-roche-sur-yon_85191/atteint-de-la-maladie-de-crohn-il-realise-son-reve-denfant-et-releve-un-defi-hors-norme_63021540.html"
+
+                    target="_blank">
+
+                    <img src="arrivépaysyonné.png" alt="photo article afa">
+
+                    <p>Liens vers PaysYonnais Arrivée </p>
+
+                </a>
+
+                    <br><br><br><br><br><br><br>
+				<a href="https://jhm.fr/le-cycliste-theo-chauviere-fait-etape-a-saint-dizier/"
+
+                    target="_blank">
+
+                    <img src="Saint-Dizier.jpg" alt="Article Saint-Dizier">
+
+                    <p>Article Saint-Dizier</p>
+
+                </a>
+
+                <br><br><br><br><br><br><br>
+				<a href="https://actu.fr/pays-de-la-loire/la-roche-sur-yon_85191/ce-vendeen-fait-le-tour-de-france-a-velo-pour-la-recherche-contre-la-maladie-de-crohn_62900887.html"
+
+                    target="_blank">
+
+                    <img src="PaysYonnais.png" alt="Article sur mon départ">
+
+                    <p>Article sur mon départ</p>
+
+                </a>
+
+                <br><br><br><br><br><br><br>
+                <a href="https://www.afa.asso.fr/le-tour-de-france-de-theo-pour-soutenir-les-enfants-atteints-de-mici/"
+
+                    target="_blank">
+
+                    <img src="article-afa.png" alt="photo article afa">
+
+                    <p>Liens vers L'article AFA</p>
+
+                </a>
+                <br><br><br><br><br><br><br>
+                <img id="ouest" src="ouest_france.jpeg" alt="article ouest France">
+
+                <h2>Interview TV Vendée</h2>
+
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/fkD4tzS0xQA?si=7Xo-PbTJN3Bc75sl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            </div>
+
         </section>
+        <section id="mon-histoire" data-aos="fade-up">
+
+            <h2>Mon Histoire</h2>
+
+            <div class="story-content">
+
+                <div id="space" class="story-text" data-aos="fade-right" style="text-align: center;">
+
+                    <p>Passionné de vélo et d'informatique</p>
+
+                    <p>Atteint de la maladie de Crohn à 13 ans</p>
+
+                    <p>Je suis un battant et un releveur de défis</p>
+
+                    <img id="rvc" src="rvc.png" alt="logo rvc">
+
+                </div>
+
+                <img src="MOI2.png" id="moi2" alt="Cycliste en action" data-aos="fade-left">
+
+            </div>
+
+        </section>
+
+
 
         <section id="le-parcours" data-aos="fade-up">
+
             <h2>Le parcours</h2>
-            <div class="story-content">
-                <img src="laparcours.png" alt="Parcours" data-aos="fade-left">
-                <div class="story-text" data-aos="fade-right">
-                        <p>3432 km</p>
-                        <p>1 mois en autonomie</p>
-                        <p>Du 15 juillet au 15 août</p>
-                        <p>6 h de vélo par jour</p>
-                </div>
+
+
+
+            <div class="etape-navigation" style="margin: 1em 0; text-align: center;">
+
+                <span id="etape-info" style="margin: 0 1em; font-weight: bold;"></span>
+
+                <br>
+
+                <button onclick="etapePrecedente()">⬅ Étape précédente</button>
+
+                <button onclick="etapeSuivante()">Étape suivante ➡</button>
+
             </div>
-            <!-- <a href="#association" class="arrow">↓</a>-->
+
+            <div id="map" style="height: 400px; width: 100%; border-radius: 12px;" data-aos="fade-left"></div>
+
+            <div id="space" class="story-texts" data-aos="fade-center">
+
+                <p>3969 km</p>
+
+                <p>28 407 m de Dénivelé</p>
+
+                <p>1 mois en autonomie</p>
+
+                <p>Du 11 juillet au 10 août</p>
+
+                <p>5 à 10 h de vélo par jour</p>
+
+            </div>
+
         </section>
+
+
+
+
+
+
 
         <section id="association" data-aos="fade-up">
+
             <h2>L'association soutenue</h2>
+
             <div class="story-content">
-                <div class="story-text" data-aos="fade-right">
-                    <p>L'AFA est une association qui aide les personnes atteintes de la maladie de Crohn et de la rectocolite hémorragique. Elle soutient également la recherche et la compréhension de ces maladies.</p>
+
+                <div id="space" class="story-text" data-aos="fade-right">
+
+                    <p>L'AFA est une association qui aide les personnes atteintes de la maladie de Crohn et de la
+
+                        rectocolite hémorragique. Elle soutient également la recherche et la compréhension de ces
+
+                        maladies.</p>
+
                 </div>
-                <img src="afa.png" alt="Logo association" data-aos="fade-left">
+
+                <a href="https://www.afa.asso.fr/le-tour-de-france-de-theo-pour-soutenir-les-enfants-atteints-de-mici/">
+
+                    <img src="afa.png" alt="Logo association" data-aos="fade-left">
+
+                </a>
+
+
+
             </div>
-            <!-- <a href="#maladie-crohn" class="arrow">↓</a>-->
+
         </section>
+
+
 
         <section id="maladie-crohn" data-aos="fade-up">
+
             <h2>Ma maladie de Crohn</h2>
+
             <div class="story-content">
+
                 <img src="chron.jpg" alt="Photo maladie de Crohn" data-aos="fade-left">
-                <div class="story-text" data-aos="fade-right">
-                    <p>Ma maladie de Crohn provoque des inflammations dans mon intestins, causant des douleurs au ventre et de la diarrhée. Mes symptômes vont et viennent. On ne sait pas exactement d'où elle vient, mais mon traitement est là pour m'aider à me sentir mieux. Avec ce soutien, je peux vivre comme une personne normale et me donner des défis comme celui-là.</p>
+
+                <div id="space" class="story-text" data-aos="fade-right">
+
+                    <p>Ma maladie de Crohn provoque des inflammations dans mon intestin, causant des douleurs au ventre
+
+                        et de la diarrhée. Mes symptômes vont et viennent. On ne sait pas exactement d'où elle vient,
+
+                        mais mon traitement est là pour m'aider à me sentir mieux. Avec ce soutien, je peux vivre comme
+
+                        une personne normale et me donner des défis comme celui-là.</p>
+
                 </div>
+
             </div>
-            <!-- <a href="#cagnotte" class="arrow">↓</a>-->
+
         </section>
+
+
+
+        <section id="soutenir" data-aos="fade-up">
+
+            <h2>Me soutenir</h2>
+
+            <div class="story-content">
+
+                <div id="space" class="story-text" data-aos="fade-right">
+
+                    <h3>Pour me soutenir vous pouvez : </h3>
+
+                    <ul>
+
+                        <li>Faire des dons pour m'encourager à pédaler</li>
+
+                        <li>Rouler avec moi durant un bout d'étape</li>
+
+                        <li>Me loger le soir et partager un moment convivial</li>
+
+                    </ul>
+
+                </div>
+
+                <img src="moi1.png" alt="Photo de moi sur le vélo" data-aos="fade-right" style="width: 250px;">
+
+            </div>
+
+
+
+        </section>
+
+
+
+        <section id="maladie-crohn" data-aos="fade-up">
+
+            <h2>Mon équipement</h2>
+
+            <div class="story-content">
+
+                <img src="equipement.jpeg" id="equipement" alt="Photo de mon équipement" data-aos="fade-left">
+
+                <div id="space" class="story-text" data-aos="fade-right">
+
+                    <p>Je vais réaliser ce Tour de France en gravel,</p>
+
+                    <p> équipé de sacoches pour être autonome et </p>
+
+                    <p>transporter toutes mes affaires.</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
 
         <section id="cagnotte" data-aos="fade-up">
+
             <h2>La Cagnotte</h2>
+
             <div class="story-content">
-                <div class="story-text" data-aos="fade-right">
-                    <p>Voici le lien de la cagnotte. Mon objectif est de récolter 1 euro par kilomètre parcouru, soit un total de 3432 euros.</p>
+
+                <p> </p>
+
+                <div id="space" class="story-text" data-aos="fade-right">
+
+                    <p>Voici le lien de la cagnotte.
+
+                    <p>
+
+
+
+                    </p> Mon objectif est de récolter 1 euro par kilomètre parcouru, soit un total de 3937 euros.</p>
+
+                    <p><a href="https://www.onparticipe.fr/c/theoTourDeFrance" target="_blank" rel="noopener noreferrer"
+
+                            data-aos="zoom-in">Lien de la cagnotte</p>
+
+                    <img id="cangotte_img" src="cagnotte.png" alt="Cagnotte à jour" /></a>
+
+
+
                 </div>
-                <a href="https://www.afa.asso.fr/association-mici/qui-sommes-nous/notre-histoire/" target="_blank" rel="noopener noreferrer" data-aos="zoom-in">Lien de la cagnotte</a>
+
             </div>
+
+        </section>
+            
+
+        
+
+
+
+        <section id="le-parcours">
+
+            <h2>Contact rapide</h2>
+
+            <p>📧 <a href="mailto:theochauv.tourdefrance@gmail.com">theochauv.tourdefrance@gmail.com</a></p>
+
+            <p>📱 Insta : <a href="https://www.instagram.com/rideforcrohn" target="_blank"
+
+                    rel="noopener noreferrer">@rideforcrohn</a></p>
+
+            <p>🚴 Strava : <a href="https://www.strava.com/athletes/68468741" target="_blank"
+
+                    rel="noopener noreferrer">Mon profil</a></p>
+
         </section>
 
-        <section id="contacte" data-aos="fade-up">
-            <h2>Contactez-moi</h2>
+
+
+ <section id="logement" data-aos="fade-up">
+
+            <h2>Mes étapes</h2>
+
             <div class="story-content">
+
                 <div class="story-text" data-aos="fade-right">
-                    <p>Mon mail : theochauv.tourdefrance@gmail.com</p>
-                    <p>
-                        <a href="https://www.instagram.com/tour.defrance_a_velo/"> Mon Insta </a>
-                    </p>
+
+                    <div id="logement-table"></div>
+
                 </div>
+
             </div>
+
+            <p><a href="Accueillir_Theo_TDF.pdf">Information pour les personnes qui m'hébergent</a></p>
+
         </section>
+
+
     </main>
 
+
+
     <footer>
+
         <p>By CHAUVIERE Théo • </p>
+
     </footer>
+
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/gpx.min.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.fullscreen@1.6.0/Control.FullScreen.css" />
+
+    <script src="https://unpkg.com/leaflet.fullscreen@1.6.0/Control.FullScreen.js"></script>
+
     <script>
+
         AOS.init({
+
             duration: 2000,
+
             once: true
+
         });
-        document.addEventListener('DOMContentLoaded', function() {
+
+        document.addEventListener('DOMContentLoaded', function () {
+
             const burgerMenu = document.getElementById('burger-menu');
+
             const navLinks = document.getElementById('nav-links');
-    
-            burgerMenu.addEventListener('click', function() {
+
+
+
+            burgerMenu.addEventListener('click', function () {
+
                 navLinks.classList.toggle('active');
 
+
+
             });
-            navLinks.addEventListener('click', function() {
+
+            navLinks.addEventListener('click', function () {
+
                 navLinks.classList.remove('active');
+
             });
+
         });
+
     </script>
+
+    <script>
+
+        const map = L.map('map', {
+
+            fullscreenControl: true
+
+        }).setView([45.5, -1], 6);
+
+
+
+
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+
+            attribution: '© OpenStreetMap',
+
+        }).addTo(map);
+
+
+
+const stops = [
+
+  { name: "La Roche sur Yon", coords: [46.6710, -1.4264], logement: true, etape: 0, jour: "Jeudi 10 juillet", km: "0 km", dénivelé: "0 m" },
+
+  { name: "Royan", coords: [45.6285, -1.0297], logement: true, etape: 1, jour: "vendredi 11 juillet", km: "206 km", dénivelé: "850 m" },
+
+  { name: "Biganos", coords: [44.6458, -0.9782], logement: true, etape: 2, jour: "samedi 12 juillet", km: "126 km", dénivelé: "317 m" },
+
+  { name: "Labenne", coords: [43.6136, -1.4319], logement: true, etape: 3, jour: "dimanche 13 juillet", km: "155 km", dénivelé: "880 m" },
+
+  { name: "Orthez", coords: [43.4874, -0.7721], logement: true, etape: 4, jour: "lundi 14 juillet", km: "148 km", dénivelé: "2080 m" },
+
+  { name: "Rontignon", coords: [43.2562, -0.3409], logement: true, etape: 5, jour: "mardi 15 juillet", km: "62 km", dénivelé: "438 m" },
+
+  { name: "Col des Bordères", coords: [42.9799, -0.1051], logement: true, etape: 6, jour: "mercredi 16 juillet", km: "62 km", dénivelé: "1860 m" },
+
+  { name: "Loudenvielle", coords: [42.7998, 0.4118], logement: true, etape: 7, jour: "jeudi 17 juillet", km: "123 km", dénivelé: "3100 m" },
+
+  { name: "Luchon", coords: [42.7862, 0.5745], logement: true, etape: 8, jour: "vendredi 18 juillet", km: "22 km", dénivelé: "700 m" },
+
+  { name: "Saint Gaudens", coords: [43.1073, 0.7230], logement: true, etape: 9, jour: "samedi 19 juillet", km: "60 km", dénivelé: "300 m" },
+
+  { name: "Mondonville", coords: [43.6630, 1.2867], logement: true, etape: 10, jour: "dimanche 20 juillet", km: "110 km", dénivelé: "500 m" },
+
+  { name: "Carcassonne", coords: [43.2140, 2.3508], logement: true, etape: 11, jour: "lundi 21 juillet", km: "124 km", dénivelé: "450 m" },
+
+  { name: "Mudaison", coords: [43.6117, 3.8773], logement: true, etape: 12, jour: "mardi 22 juillet", km: "195 km", dénivelé: "635 m" },
+
+  { name: "Saint Hilaire d'Ozilhan", coords: [44.0554, 4.5867], logement: true, etape: 13, jour: "mercredi 23 juillet", km: "125 km", dénivelé: "300 m" },
+
+  { name: "Valence", coords: [44.9334, 4.8924], logement: true, etape: 14, jour: "jeudi 24 juillet", km: "162 km", dénivelé: "800 m" },
+
+  { name: "Chambéry", coords: [45.5646, 5.9178], logement: true, etape: 15, jour: "vendredi 25 juillet", km: "182 km", dénivelé: "1240 m" },
+
+  { name: "Annecy", coords: [45.8992, 6.1294], logement: true, etape: 16, jour: "samedi 26 juillet", km: "100 km", dénivelé: "700 m" },
+
+  { name: "Annecy", coords: [45.8992, 6.1294], logement: true, etape: 17, jour: "dimanche 27 juillet", km: "42 km", dénivelé: "350 m" },
+
+  { name: "Louhans / Rosay", coords: [46.6256, 5.2219], logement: true, etape: 18, jour: "lundi 28 juillet", km: "144 km", dénivelé: "1990 m" },
+
+  { name: "Gray", coords: [47.4439, 5.5920], logement: true, etape: 19, jour: "mardi 29 juillet", km: "155 km", dénivelé: "950 m" },
+
+  { name: "Saint Dizier", coords: [48.6361, 4.9486], logement: true, etape: 20, jour: "mercredi 30 juillet", km: "192 km", dénivelé: "850 m" },
+
+  { name: "Allemant", coords: [49.5606, 3.6264], logement: true, etape: 21, jour: "jeudi 31 juillet", km: "176 km", dénivelé: "977 m" },
+
+  { name: "Amiens", coords: [49.8950, 2.3023], logement: true, etape: 22, jour: "vendredi 1 août", km: "170 km", dénivelé: "840 m" },
+
+  { name: "Mers les Bains", coords: [50.0707, 1.3958], logement: true, etape: 23, jour: "samedi 2 août", km: "102 km", dénivelé: "300 m" },
+
+  { name: "Fécamp", coords: [49.7571, 0.3745], logement: true, etape: 24, jour: "dimanche 3 août", km: "108 km", dénivelé: "1200 m" },
+
+  { name: "Honfleur", coords: [49.4196, 0.2329], logement: true, etape: 25, jour: "lundi 4 août", km: "92 km", dénivelé: "600 m" },
+
+  { name: "Vire", coords: [48.8385, -0.8895], logement: true, etape: 26, jour: "mardi 5 août", km: "142 km", dénivelé: "1200 m" },
+
+  { name: "Saint Malo / Pleurtuit", coords: [48.6493, -2.0257], logement: true, etape: 27, jour: "mercredi 6 août", km: "163 km", dénivelé: "920 m" },
+
+  { name: "Bains-sur-Oust", coords: [47.6801, -2.0348], logement: true, etape: 28, jour: "jeudi 7 août", km: "166 km", dénivelé: "1020 m" },
+
+  { name: "Saint Nazaire", coords: [47.2735, -2.2130], logement: true, etape: 29, jour: "vendredi 8 août", km: "160 km", dénivelé: "1200 m" },
+
+  { name: "Notre Dame de Monts", coords: [46.8450, -2.1326], logement: true, etape: 30, jour: "samedi 9 août", km: "125 km", dénivelé: "500 m" },
+
+  { name: "L'Angormière (Aizenay)", coords: [46.7400, -1.6150], logement: true, etape: 31, jour: "dimanche 10 août", km: "70 km", dénivelé: "360 m" },
+
+];
+
+
+
+
+
+
+
+
+
+        function generateTable() {
+
+            const container = document.getElementById("logement-table");
+
+
+
+            const rows = (data, emoji, label) =>
+
+                data.map((stop, index) => `
+
+                <tr>
+
+                    <td>🚴 ${stop.etape}</td>
+
+                    <td>${stop.name}</td>
+
+                    <td>${stop.jour}</td>
+
+                    <td>${stop.km}</td>
+
+                    <td>${stop.dénivelé}</td>
+
+                </tr>
+
+            `).join("");
+
+
+
+            const nonTrouves = stops.filter(s => !s.logement);
+
+            const trouves = stops.filter(s => s.logement);
+
+
+
+            container.innerHTML = `
+
+            <table class="styled-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Étape</th>
+
+                        <th>📍 Où ?</th>
+
+                        <th>📅 Quand ?</th>
+
+                        <th>🔍 Distance</th>
+
+                        <th>📈 Dénivelé</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    ${rows(nonTrouves, "❌", "En recherche")}
+
+                    ${rows(trouves, "🏠", "Trouvé")}
+
+                </tbody>
+
+            </table>
+
+        `;
+
+        }
+
+
+
+        window.addEventListener('DOMContentLoaded', generateTable);
+
+
+
+
+
+
+
+        stops.forEach(stop => {
+
+            const icon = L.divIcon({
+
+                html: stop.logement ? '🏠' : '❌',
+
+                className: '',
+
+                iconSize: [36, 36]
+
+            });
+
+
+
+            L.marker(stop.coords, { icon }).addTo(map)
+
+                .bindPopup(`
+
+                    <b>Étape ${stop.etape} - ${stop.name}</b><br>
+
+                    Jour : ${stop.jour}<br>
+
+                    Logement : ${stop.logement ? "trouvé 🏠" : "non trouvé ❌"}
+
+                `);
+
+        });
+
+
+
+        let etapeIndex = 0;
+
+
+
+        const etapeInfo = document.getElementById('etape-info');
+
+
+
+        function afficherEtape(index) {
+
+            const etape = stops[index];
+
+            if (!etape) return;
+
+
+
+            map.setView(etape.coords, 12, { animate: true });
+
+            etapeInfo.textContent = `Étape ${etape.etape} - ${etape.name} - ${etape.jour}`;
+
+        }
+
+
+
+        function etapeSuivante() {
+
+            if (etapeIndex < stops.length - 1) {
+
+                etapeIndex++;
+
+                afficherEtape(etapeIndex);
+
+            }
+
+        }
+
+
+
+        function etapePrecedente() {
+
+            if (etapeIndex > 0) {
+
+                etapeIndex--;
+
+                afficherEtape(etapeIndex);
+
+            }
+
+        }
+
+
+
+        // Vue d’ensemble à l’ouverture (fitBounds sur tout le parcours)
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            afficherEtape(etapeIndex); // Affiche la première étape
+
+        });
+
+
+
+
+
+
+
+        // Charger et afficher le fichier GPX
+
+        new L.GPX('parcours_tdf.gpx', {
+
+            async: true,
+
+            marker_options: {
+
+                startIconUrl: null,
+
+                endIconUrl: null,
+
+                shadowUrl: null
+
+            },
+
+            polyline_options: {
+
+                color: '#007bff',
+
+                weight: 4,
+
+                opacity: 0.75,
+
+                lineCap: 'round'
+
+            }
+
+        }).on('loaded', function (e) {
+
+            map.fitBounds(e.target.getBounds());
+
+        }).addTo(map);
+
+    </script>
+
+
+
+
+
 </body>
+
+
+
 </html>

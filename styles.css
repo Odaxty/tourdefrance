@@ -5,21 +5,27 @@ body {
     background-color: #f4f4f4;
     scroll-behavior: smooth;
 }
-html, body {
+
+html,
+body {
     overflow-x: hidden;
 }
+
 body {
     scroll-behavior: smooth;
 }
+
 :root {
     --primary-color: #0077cc;
     --accent-color: #ffcb05;
     --bg-light: #ffffff;
-    --text-color: #333;
+    --text-color: #222;
 }
-p{
+
+p {
     text-align: center;
 }
+
 nav {
     background-color: var(--primary-color);
     padding: 1rem;
@@ -29,11 +35,15 @@ nav {
     align-items: center;
     position: relative;
 }
+
 #mon-histoire,
 #le-parcours,
 #association,
 #maladie-crohn,
-#cagnotte {
+#cagnotte,
+#soutenir,
+#logement,
+#article {
     scroll-margin-top: 20px;
 }
 
@@ -42,6 +52,13 @@ nav a {
     margin: 0 1rem;
     text-decoration: none;
     font-weight: 600;
+}
+
+nav img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 1rem;
 }
 
 nav a:hover {
@@ -67,7 +84,7 @@ header {
     width: 250px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1rem;
+    margin-right: 50px;
 }
 
 .header-text h1 {
@@ -79,6 +96,13 @@ header {
     font-size: 1rem;
     color: #555;
 }
+
+#cangotte_img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 .donation-counter {
     margin-top: 1rem;
@@ -95,12 +119,36 @@ header {
     color: var(--primary-color);
 }
 
-#mon-histoire, #le-parcours, #association, #maladie-crohn, #cagnotte, #contacte {
+.soutenir img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.donation-counter span {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+#mon-histoire,
+#le-parcours,
+#association,
+#maladie-crohn,
+#cagnotte,
+#logement,
+#article,
+#contacte,
+#soutenir,
+#intro {
     text-align: center;
 }
-#le-parcours img, #mon-histoire img {
+
+#le-parcours img {
     width: 30%;
 }
+
 section {
     padding: 2rem;
     background-color: var(--bg-light);
@@ -108,14 +156,60 @@ section {
     position: relative;
 }
 
+#intro {
+    background-color: var(--bg-light);
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.intro-content {
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    margin: auto;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    text-align: left;
+}
+
+.intro-content img {
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.intro-text {
+    max-width: 500px;
+    text-align: center;
+    margin-left: 100px;
+}
+
+.intro-text h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.intro-text p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+#space {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
 .story-content {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
-.story-content img {
+#moi2 {
     max-width: 45%;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -124,6 +218,11 @@ section {
 .story-text {
     max-width: 45%;
     text-align: left;
+}
+
+#rvc {
+    height: 100px;
+    width: 130px;
 }
 
 .story-text p {
@@ -146,6 +245,37 @@ section {
     transform: translateY(5px);
 }
 
+.map-controls {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.map-controls button {
+    background: var(--primary-color);
+    border: none;
+    color: #fff;
+    padding: 0.4rem 0.8rem;
+    margin: 0 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.map-controls button:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.map-controls #current-step {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.article-content img {
+    width: 800px;
+    height: auto;
+}
+
 footer {
     background-color: var(--primary-color);
     padding: 1rem;
@@ -155,6 +285,7 @@ footer {
     color: white;
     font-weight: bold;
 }
+
 
 footer .top-link {
     color: white;
@@ -195,16 +326,223 @@ footer .top-link {
     color: var(--accent-color);
 }
 
-@media (max-width: 850px) {
+.etape-navigation button {
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#donation-counter {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 30px;
+    background-color: white;
+}
+
+.etape-navigation button:hover {
+    background-color: #005fa3;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.styled-table thead {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 16px;
+    text-align: left;
+}
+
+.styled-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+#equipement {
+    width: 500px;
+    height: auto;
+    border-radius: 10%;
+    margin-right: 10px;
+
+}
+
+/*Ajout css pour le bandeaux  */
+.bandeau-annonce {
+    top: 172px;
+    /* hauteur de ta nav */
+    left: 0;
+    width: 100%;
+    height: 35px;
+    background: rgb(98, 249, 47);
+    overflow: hidden;
+    z-index: 9998;
+    /* un poil plus bas que ta nav pour rester dessous */
+}
+
+.marquee {
+    display: flex;
+    width: fit-content;
+    animation: scroll 15s linear infinite;
+}
+
+.marquee-content {
+    display: inline-block;
+    white-space: nowrap;
+    color: #000000;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    padding: 0 2rem;
+}
+
+.marquee-content a {
+    color: #000000;
+    text-decoration: underline;
+    margin-left: 5px;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-45%);
+    }
+}
+
+/* Ajoutez des media queries pour les petits écrans */
+@media only screen and (max-width: 768px) {
+    .styled-table {
+        font-size: 14px;
+    }
+
+    .styled-table th,
+    .styled-table td {
+        padding: 8px 12px;
+    }
+
+    header img {
+        width: 90%;
+        height: auto;
+    }
+
+    .header-text h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .styled-table {
+        font-size: 12px;
+    }
+
+    .styled-table th,
+    .styled-table td {
+        padding: 6px 10px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .article-content img {
+        width: 500px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 536px) {
+    .article-content img {
+        width: 325px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 1048px) {
+    .intro-text {
+        max-width: 500px;
+        text-align: center;
+        margin-left: 0px;
+    }
+
+    #equipement,
+    #cangotte_img {
+        width: 100%;
+        height: auto;
+        margin-right: 0px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-content img {
+        width: 80%;
+        margin-right: 0;
+    }
+
+    .header-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .header-text p {
+        font-size: 0.9rem;
+    }
+
+    nav img {
+        width: 80px;
+        height: 80px;
+    }
+
     .header-content,
     .story-content {
         flex-direction: column;
         text-align: center;
     }
 
-    .story-content img,
+    .donation-counter img {
+        width: auto;
+        height: max-content;
+    }
+
+    #rvc {
+        width: 60px;
+        height: 50px;
+        margin-left: 10px;
+        align-items: center;
+    }
+
     .story-text {
         max-width: 90%;
+    }
+
+    #donation-counter img {
+        max-width: 100%;
+    }
+
+    #space {
+        padding-left: 0px;
+        padding-right: 0px;
     }
 
     nav a {
@@ -215,9 +553,12 @@ footer .top-link {
     .header-content img {
         width: 60%;
     }
-    #le-parcours img, #mon-histoire img {
+
+    #le-parcours img,
+    #moi2 {
         width: 90%;
     }
+
     .burger-menu {
         display: flex;
     }
@@ -236,6 +577,6 @@ footer .top-link {
     .nav-links.active {
         opacity: 1;
         visibility: visible;
-        
+
     }
 }
